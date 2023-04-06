@@ -14,5 +14,7 @@ app.use(express.json());
 app.get("/api/v1/products",(req,res,next)=>{
     res.status(200).send({status: "success",message: "Product fetched successfully", data :{product: {...products}}});
 })
-
+app.get("*",(req,res)=>{
+    res.status(400).send({message: "Product not found"});
+})
 module.exports = app;
