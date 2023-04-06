@@ -12,7 +12,7 @@ app.use(express.json());
 // Endpoint - /api/v1/products
 
 app.get("/api/v1/products",(req,res,next)=>{
-    res.status(200).send({status: "success",message: "Product fetched successfully", data :{product: {...products}}});
+    res.status(200).send({status: "success",message: "Product fetched successfully", data :{product: products}});
 })
 app.get("*",(req,res)=>{
     res.status(400).send({message: "Product not found"});
