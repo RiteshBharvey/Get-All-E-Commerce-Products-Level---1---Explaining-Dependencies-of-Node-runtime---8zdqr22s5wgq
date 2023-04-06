@@ -12,11 +12,7 @@ app.use(express.json());
 // Endpoint - /api/v1/products
 
 app.get("/api/v1/products",(req,res,next)=>{
-  if(req.url==="/products"){
     res.status(200).send(products);
-  }else{
-    res.status(400).send({message: "Product not found"});
-  }
 })
 
 module.exports = app;
