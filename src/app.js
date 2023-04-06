@@ -11,4 +11,12 @@ app.use(express.json());
 // Write GET endpoint for sending all the products to client here
 // Endpoint - /api/v1/products
 
+app.get("/api/v1/products",(req,res,next)=>{
+  if(req.url==="/products"){
+    res.status(200).send(products);
+  }else{
+    res.status(400).send({message: "Product not found"});
+  }
+})
+
 module.exports = app;
