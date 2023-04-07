@@ -12,7 +12,8 @@ app.use(express.json());
 // Endpoint - /api/v1/products
 
 app.get("/api/v1/products",(req,res,next)=>{
-    //if(products){
+    try{
+        //if(products){
         //if(products.length>0){
             res.status(200).json({status: "success",message: "Product fetched successfully", data :{product: products}});
         //}else{
@@ -21,5 +22,8 @@ app.get("/api/v1/products",(req,res,next)=>{
     //}else{
        // res.status(404).json({message: "Product not found"});
     // }
+    }catch(err){
+        cosole.log(err);
+    }
 })
 module.exports = app;
