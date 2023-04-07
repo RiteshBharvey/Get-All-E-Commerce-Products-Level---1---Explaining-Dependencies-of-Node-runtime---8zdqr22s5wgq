@@ -14,7 +14,7 @@ app.use(express.json());
 app.get("/api/v1/products",(req,res,next)=>{
     if(products){
         if(products.length>0){
-            res.status(200).json(products);
+            res.status(200).json({status: "success",message: "Product fetched successfully", data :{product: products}});
         }else{
             res.status(404).json({"message": "Product not found"});
         }
