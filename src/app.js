@@ -16,10 +16,10 @@ app.get("/api/v1/products",(req,res,next)=>{
         if(products.length>0){
             res.status(200).json({status: "success",message: "Product fetched successfully", data :{product: products}});
         }else{
-            res.status(404).json({"message": "Product not found"});
+            res.status(404).json({message: "Product not found"});
         }
     }else{
-        res.status(404).json({"message": "Product not found"});
+        res.status(404).json({message: "Product not found"});
     }
 })
 module.exports = app;
